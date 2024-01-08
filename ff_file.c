@@ -318,6 +318,7 @@ static FF_FILE * prvAllocFileHandle( FF_IOManager_t * pxIOManager,
             }
 
             /* The user tries to open a file but the path leading to the file does not exist. */
+            xError = FF_createERR( FF_ERR_FILE_INVALID_PATH, FF_OPEN );
         }
         else if( FF_isERR( xError ) == pdFALSE )
         {
